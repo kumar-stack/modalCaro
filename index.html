@@ -103,8 +103,8 @@
         })
         prev.addEventListener('click',function(){
             currentSlide--
-            if(currentSlide===0){
-                currentSlide = card.length
+            if(currentSlide<0){
+                currentSlide = card.length - 1
             }
             currentSlideData(currentSlide)
         })
