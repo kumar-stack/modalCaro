@@ -7,7 +7,7 @@
     <title>moadal-carousel</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body onload=delay()>
+<body>
     <div class="main">
         <div class="card">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8IjxfswocPQQr3t4VCUdBjgYCSaoeFmNx8bxAXW6m&s" alt="one">
@@ -78,8 +78,8 @@
 
         let currentSlide = 0 
 
-        const delay = () =>{
-            content.classList.add('hide')
+        window.onload = () =>{
+            content.style.display='none'
         }
 
         card.forEach(function(btn,index){
@@ -93,7 +93,6 @@
         
         function currentSlideData(position){
             slider.style.transform=`translateX(${-width*currentSlide}px)`
-            slider.style.transition='0.8s ease-in-out'
         }
 
         next.addEventListener('click',function(){
@@ -118,7 +117,37 @@
         })
 
         
-      
+    // function openModal() {
+    // document.getElementById("myModal").style.display = "block";
+    // }
+
+    // function closeModal() {
+    // document.getElementById("myModal").style.display = "none";
+    // }
+
+    // var slideIndex = 1;
+    // showSlides(slideIndex);
+
+    // function plusSlides(n) {
+    // showSlides(slideIndex += n);
+    // }
+
+    // function currentSlide(n) {
+    // showSlides(slideIndex = n);
+    // }
+
+    // function showSlides(n) {
+    // var i;
+    // var slides = document.getElementsByClassName("mySlides");
+    // var captionText = document.getElementById("caption");
+    // if (n > slides.length) {slideIndex = 1}
+    // if (n < 1) {slideIndex = slides.length}
+    // for (i = 0; i < slides.length; i++) {
+    //     slides[i].style.display = "none";
+    // }
+    // slides[slideIndex-1].style.display = "block";
+    // }
+
     </script>
     
 </body>
