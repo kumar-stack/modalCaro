@@ -5,6 +5,9 @@
 body{
     background-color: lightgreen;       
 }
+.bg{
+    background-color: brown;
+}
 .main{
     border: 1px solid gray; 
     display: flex;
@@ -51,8 +54,6 @@ img{
     background-color: lightgreen;
     border-radius: 20px;
     overflow: hidden;
-    display: none;
-
 }
 .content-btns{
     position: absolute;

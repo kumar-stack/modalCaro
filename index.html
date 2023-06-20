@@ -7,7 +7,7 @@
     <title>moadal-carousel</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body onload=delay()>
     <div class="main">
         <div class="card">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8IjxfswocPQQr3t4VCUdBjgYCSaoeFmNx8bxAXW6m&s" alt="one">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="overlay"></div>
-    <div class="content ">
+    <div class="content">
         <div class="content-btns">
             <button class="prev">-</button>
             <button class="next">+</button>
@@ -74,10 +74,13 @@
         const prev =document.querySelector('.prev')
         const next =document.querySelector('.next')
         const close =document.querySelector('.close')
+        const body = document.querySelector('body')
 
-        let currentSlide = 0
+        let currentSlide = 0 
 
-    
+        const delay = () =>{
+            content.classList.add('hide')
+        }
 
         card.forEach(function(btn,index){
             btn.addEventListener('click',function(){
@@ -87,9 +90,10 @@
                 currentSlideData(currentSlide)
             })
         })
-
+        
         function currentSlideData(position){
             slider.style.transform=`translateX(${-width*currentSlide}px)`
+            slider.style.transition='0.8s ease-in-out'
         }
 
         next.addEventListener('click',function(){
@@ -112,6 +116,9 @@
             overlay.style.display='none'
             console.log('clicked closed')
         })
+
+        
+      
     </script>
     
 </body>
