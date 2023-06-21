@@ -40,7 +40,7 @@ img{
     background-color: rgba(0,0,0,0.8);
     position: fixed;
     top: 0;
-    display: none;
+    visibility: hidden;
 }
 .content{
     border: 1px solid green;
@@ -54,6 +54,7 @@ img{
     background-color: lightgreen;
     border-radius: 20px;
     overflow: hidden;
+    visibility: hidden;
 }
 .content-btns{
     position: absolute;
@@ -89,10 +90,6 @@ p{
     color: green;
     font-size: 20px;
     padding:0 20px
-}
-
-.hide{
-    display: none;
 }
 
 
