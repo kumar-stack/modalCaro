@@ -66,7 +66,7 @@
     <script>
         const overlay = document.querySelector('.overlay')
         const slider = document.querySelector('.slider')
-        let cardDetail = document.querySelectorAll('.card-detail')
+        const cardDetail = document.querySelectorAll('.card-detail')
         const width = document.querySelector('.card-detail').clientWidth
         const card = document.querySelectorAll('.card')
 
@@ -78,26 +78,21 @@
 
         let currentSlide = 0 
 
-        window.onload = () =>{
-            content.style.display='none'
-        }
-
+      
         card.forEach(function(btn,index){
             btn.addEventListener('click',function(){
-                content.style.display="block"
-                overlay.style.display="block"
-                currentSlide = index 
-                currentSlideData(currentSlide)
-            })
+                content.style.visibility="visible"
+                overlay.style.visibility="visible"
+                slider.style.transform=`translateX(${-width*index}px)`            })
         })
         
-        function currentSlideData(position){
+        function currentSlideData(){
             slider.style.transform=`translateX(${-width*currentSlide}px)`
         }
 
         next.addEventListener('click',function(){
             currentSlide++
-            if(currentSlide===5){
+            if(currentSlide>=5){
                 currentSlide=0
             }
             currentSlideData(currentSlide)
@@ -111,42 +106,9 @@
         })
 
         close.addEventListener('click',function(){
-            content.style.display='none'
-            overlay.style.display='none'
-            console.log('clicked closed')
+            content.style.visibility='hidden'
+            overlay.style.visibility='hidden'
         })
-
-        
-    // function openModal() {
-    // document.getElementById("myModal").style.display = "block";
-    // }
-
-    // function closeModal() {
-    // document.getElementById("myModal").style.display = "none";
-    // }
-
-    // var slideIndex = 1;
-    // showSlides(slideIndex);
-
-    // function plusSlides(n) {
-    // showSlides(slideIndex += n);
-    // }
-
-    // function currentSlide(n) {
-    // showSlides(slideIndex = n);
-    // }
-
-    // function showSlides(n) {
-    // var i;
-    // var slides = document.getElementsByClassName("mySlides");
-    // var captionText = document.getElementById("caption");
-    // if (n > slides.length) {slideIndex = 1}
-    // if (n < 1) {slideIndex = slides.length}
-    // for (i = 0; i < slides.length; i++) {
-    //     slides[i].style.display = "none";
-    // }
-    // slides[slideIndex-1].style.display = "block";
-    // }
 
     </script>
     
