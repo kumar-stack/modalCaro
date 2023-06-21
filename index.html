@@ -83,7 +83,8 @@
             btn.addEventListener('click',function(){
                 content.style.visibility="visible"
                 overlay.style.visibility="visible"
-                slider.style.transform=`translateX(${-width*index}px)`            })
+                currentSlide = index 
+                slider.style.transform=`translateX(${-width*currentSlide}px)`            })
         })
         
         function currentSlideData(){
@@ -92,7 +93,7 @@
 
         next.addEventListener('click',function(){
             currentSlide++
-            if(currentSlide>=5){
+            if(currentSlide===5){
                 currentSlide=0
             }
             currentSlideData(currentSlide)
