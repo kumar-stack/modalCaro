@@ -93,7 +93,7 @@
 
         next.addEventListener('click',function(){
             currentSlide++
-            if(currentSlide===5){
+            if(currentSlide>=5){
                 currentSlide=0
             }
             currentSlideData(currentSlide)
@@ -110,6 +110,9 @@
             content.style.visibility='hidden'
             overlay.style.visibility='hidden'
         })
+
+        const d =new Date()
+        console.log()
 
     </script>
     
